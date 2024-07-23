@@ -9,3 +9,24 @@
 input {
     color-scheme: dark;
 }
+.rdp-root {
+
+    --rdp-range_middle-background-color: #BEF264;
+    --rdp-range_middle-foreground-color: white;
+    --rdp-range_middle-color: WHITE;
+
+    --rdp-range_start-color: #1a2e05;
+    --rdp-range_start-background: #a3e635;
+    --rdp-range_start-date-background-color:#a3e635;
+
+    --rdp-range_end-background: #a3e635;
+    --rdp-range_end-color: #1a2e05;
+    --rdp-range_end-date-background-color: #a3e635;
+
+}
+
+.rdp-chevron {
+    display: inline-block;
+    fill: #BEF264;
+  }
+  

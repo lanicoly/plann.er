@@ -1,4 +1,5 @@
 import { MapPin, Calendar, Settings2 } from "lucide-react";
+import { Button } from "../../components/button";
 
 export function LocalizationDateHeader() {
     return(
@@ -17,7 +18,13 @@ export function LocalizationDateHeader() {
 
             <div className='w-px h-6 bg-zinc-800'></div>
 
-            <button className="text-xl font-medium rounded-lg bg-zinc-800 text-zinc-200 px-5 py-2 flex items-center gap-2 hover:bg-zinc-700">Alterar local/data <Settings2 className='size-5' /></button>
+
+            {/* passando dentro do componente global 'Button' todo o conteudo que eu quero que fique dentro */}
+            <Button variant="secondary"> 
+                Alterar local/data 
+                <Settings2 className='size-5' />
+            </Button>
+
         </div>
     </div>
     )

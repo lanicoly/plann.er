@@ -1,14 +1,19 @@
 import { Mail, User, X } from "lucide-react";
 import { FormEvent } from "react";
+import { Button } from "../../components/button";
 
 interface ConfirmTravelModalProps {
     closeTravelModal: () => void ;
     createTrip: (event: FormEvent<HTMLFormElement>) => void;
+    setOwnerName: (ownerName: string) => void;
+    setOwnerEmail: (ownerEmail: string) => void;
 }
 
 export function ConfirmTravelModal({
     closeTravelModal,
-    createTrip
+    createTrip,
+    setOwnerEmail,
+    setOwnerName
 }: ConfirmTravelModalProps) {
     return (
         
@@ -32,17 +37,24 @@ export function ConfirmTravelModal({
 
                     <div className='bg-zinc-950 w-full rounded-lg flex items-center gap-3 h-14 px-4'>
                         <User className='text-zinc-400 text-xl' />
-                        <input className='placeholder-zinc-400 text-xl bg-transparent outline-none flex-1' name='name' placeholder='Seu nome completo' />
+                        <input className='placeholder-zinc-400 text-xl bg-transparent outline-none flex-1' name='name' placeholder='Seu nome completo'
+                        onChange={event => setOwnerName(event.target.value)}
+                        />
                     </div>
 
                     <div className='bg-zinc-950 w-full rounded-lg flex items-center gap-3 h-14 px-4'>
                         <Mail className='text-zinc-400 text-xl' />
-                        <input className='placeholder-zinc-400 text-xl bg-transparent outline-none flex-1' type='email' name='email' placeholder='Seu e-mail pessoal' />
+                        <input className='placeholder-zinc-400 text-xl bg-transparent outline-none flex-1' type='email' name='email' placeholder='Seu e-mail pessoal' 
+                        onChange={event => setOwnerEmail(event.target.value)}
+                        />
                     </div>
 
                 </div>
 
-                <button type='submit' className='bg-lime-300 text-lime-950 text-lg font-medium flex items-center justify-center rounded-lg h-11 py-2 px-5 w-full hover:bg-lime-400'>Confirmar criação da viagem</button>
+                <Button variant="primary" size='full'> 
+                    Confirmar criação da viagem
+                </Button>
+
             </form>
 
         </div>
